@@ -16,7 +16,7 @@
 		</properties>
 	</persistence-unit>
 	
-	<!-- 
+	<!--
 	<persistence-unit name="agendamentoPU">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		<non-jta-data-source>agendamentoDS</non-jta-data-source>
@@ -26,5 +26,5 @@
 		</properties>
 	</persistence-unit>
 	-->
-
+	
 </persistence>
