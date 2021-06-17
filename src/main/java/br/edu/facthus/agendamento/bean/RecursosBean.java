@@ -30,7 +30,24 @@ public class RecursosBean {
 				.createQuery("SELECT r FROM Recurso r", Recurso.class)
 				.getResultList();
 	}
+	
+	public Recurso buscaPorCodigo(Integer id) {
+		return entityManager.find(Recurso.class, id);
+	}
+	
+	public List<Recurso> buscaPorDescricao(String descricao) {
+		return entityManager
+				.createNamedQuery("Recurso.findByDescricao", Recurso.class)
+				.setParameter("descricao", 
+						String.format("%%%s%%", descricao.toUpperCase()))
+				.getResultList();
+	}
+	
+	public List<Recurso> buscaPorCategoria(Categoria categoria) {
+		return entityManager
+				.createNamedQuery("Recurso.findByCategoria", Recurso.class)
+				.setParameter("categoria", categoria)
+				.getResultList();
+	}
 
 }
-
-
